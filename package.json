@@ -1,0 +1,29 @@
+{
+    "name": "greek-feeds",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "dependencies": {
+        "firebase": "^4.12.1",
+        "node-sass": "^4.8.3",
+        "sass": "^1.1.1"
+    },
+    "devDependencies": {},
+    "watches": {
+        "sass": "sass/**"
+    },
+    "scripts": {
+        "sass": "node-sass sass/ -o public/style/ --watch",
+        "dev": "rerun-script"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/bengeier/GreekFeeds.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/bengeier/GreekFeeds/issues"
+    },
+    "homepage": "https://github.com/bengeier/GreekFeeds#readme"
+}
