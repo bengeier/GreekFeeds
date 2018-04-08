@@ -1,20 +1,18 @@
 (() => {
     "use strict";
+
     document.querySelector(".login-button").addEventListener("click", () => {
-        let provider = new firebase.auth.GoogleAuthProvider();
-        firebase.auth().signInWithPopup(provider).then(function(result) {
-            // This gives you a Google Access Token. You can use it to access the Google API.
-            let token = result.credential.accessToken;
-            // The signed-in user info.
-            let user = result.user;
-        }).catch(function(error) {
+        var ui = new firebaseui.auth.AuthUI(firebase.auth());
+        ui.start('#firebaseui-auth-container', {
+            signInOptions: [
+                firebase.auth.EmailAuthProvider.PROVIDER_ID
+            ],
+            // Other config options...
+        });
+        firebase.auth().signInUserWithEmailAndPassword(email, password).catch(function(error) {
             // Handle Errors here.
-            let errorCode = error.code;
-            let errorMessage = error.message;
-            // The email of the user's account used.
-            let email = error.email;
-            // The firebase.auth.AuthCredential type that was used.
-            let credential = error.credential;
+            var errorCode = error.code;
+            var errorMessage = error.message;
         });
     });
     let active_user;
@@ -22,12 +20,18 @@
         if (_user) {
             active_user = _user;
         }
-    })
-
-    document.querySelector("#org-food-available").addEventListener("click", () => {
-        // firebase.database().ref(active_user.uid).update({food: "NEEDED"});
     });
-    //provider.addScope('https://www.googleapis.com/auth/contacts.readonly');
+
+    var usernameee = null;
+    document.querySelector(".button").addEventListener("click", () => {
+        let org = firebase.database().ref(active_user.uid).on("value", function(snapshot) {
+            return snapshot.val()['org'];
+        }, function (error) {
+            console.log("Error: " + error.code);
+        });
+
+        //firebase.database().ref("fraternities").update([org]: "Needed");
+    });
 
 
     let food_button_state = 'ready';
