@@ -196,3 +196,192 @@
     at emitTwo (events.js:106:13)
     at ChildProcess.emit (events.js:191:7)
     at Process.ChildProcess._handle.onexit (internal/child_process.js:215:12)
+[debug] [2018-04-08T01:11:46.448Z] ----------------------------------------------------------------------
+[debug] [2018-04-08T01:11:46.448Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\benge\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase serve
+[debug] [2018-04-08T01:11:46.448Z] CLI Version:   3.18.2
+[debug] [2018-04-08T01:11:46.448Z] Platform:      win32
+[debug] [2018-04-08T01:11:46.448Z] Node Version:  v6.9.2
+[debug] [2018-04-08T01:11:46.448Z] Time:          Sat Apr 07 2018 21:11:46 GMT-0400 (Eastern Daylight Time)
+[debug] [2018-04-08T01:11:46.448Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-04-08T01:11:46.479Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-04-08T01:11:46.479Z] > authorizing via signed-in user
+[debug] [2018-04-08T01:11:46.479Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2018-04-08T01:11:46.479Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ { refresh_token: '1/eF-C2ngwnViYEJy36U1xw8xG5VFoY_IIFbL9g0N_al2ofnbB67nreyBsRcv2AXV0',
+  client_id: '563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com',
+  client_secret: 'j9iVZfS8kkCEFUPaAeJV0sAi',
+  grant_type: 'refresh_token',
+  scope: 'email https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/cloudplatformprojects.readonly https://www.googleapis.com/auth/firebase openid' } 
+ Sat Apr 07 2018 21:11:46 GMT-0400 (Eastern Daylight Time)
+[debug] [2018-04-08T01:11:46.721Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-08T01:11:46.784Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/hgw-greekfeed  
+  
+ Sat Apr 07 2018 21:11:46 GMT-0400 (Eastern Daylight Time)
+[debug] [2018-04-08T01:11:47.534Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-08T01:11:47.534Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/hgw-greekfeed/tokens  
+  
+ Sat Apr 07 2018 21:11:47 GMT-0400 (Eastern Daylight Time)
+[debug] [2018-04-08T01:11:48.801Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-08T01:11:48.816Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/hgw-greekfeed  
+  
+ Sat Apr 07 2018 21:11:48 GMT-0400 (Eastern Daylight Time)
+[debug] [2018-04-08T01:11:48.973Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'C:\Users\benge\Desktop\GreekFeeds'...
+[info] 
+[info] i  functions: Preparing to emulate functions.
+[debug] [2018-04-08T01:11:51.358Z] Fetching environment
+[debug] [2018-04-08T01:11:51.365Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/366684201737:getServerAppConfig  
+  
+ Sat Apr 07 2018 21:11:51 GMT-0400 (Eastern Daylight Time)
+[debug] [2018-04-08T01:11:51.367Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/366684201737/clients/_:getWebAppConfig  
+  
+ Sat Apr 07 2018 21:11:51 GMT-0400 (Eastern Daylight Time)
+[debug] [2018-04-08T01:11:51.645Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-08T01:11:51.645Z] Starting @google-cloud/functions-emulator
+[debug] [2018-04-08T01:11:51.724Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: public
+[info] +  hosting: Local server: http://localhost:5000
+
+[warn] !  functions: Error from emulator. Error: Emulator crashed! Check the log file...
+[debug] [2018-04-08T01:11:51.997Z] Error: Emulator crashed! Check the log file...
+    at ChildProcess.child.on (C:\Users\benge\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\@google-cloud\functions-emulator\src\cli\controller.js:650:24)
+    at emitTwo (events.js:106:13)
+    at ChildProcess.emit (events.js:191:7)
+    at Process.ChildProcess._handle.onexit (internal/child_process.js:215:12)
+[debug] [2018-04-08T01:14:51.920Z] ----------------------------------------------------------------------
+[debug] [2018-04-08T01:14:51.920Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\benge\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase serve
+[debug] [2018-04-08T01:14:51.920Z] CLI Version:   3.18.2
+[debug] [2018-04-08T01:14:51.920Z] Platform:      win32
+[debug] [2018-04-08T01:14:51.920Z] Node Version:  v6.9.2
+[debug] [2018-04-08T01:14:51.920Z] Time:          Sat Apr 07 2018 21:14:51 GMT-0400 (Eastern Daylight Time)
+[debug] [2018-04-08T01:14:51.920Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-04-08T01:14:51.966Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-04-08T01:14:51.970Z] > authorizing via signed-in user
+[debug] [2018-04-08T01:14:51.980Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/hgw-greekfeed  
+  
+ Sat Apr 07 2018 21:14:51 GMT-0400 (Eastern Daylight Time)
+[debug] [2018-04-08T01:14:52.352Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-08T01:14:52.352Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/hgw-greekfeed/tokens  
+  
+ Sat Apr 07 2018 21:14:52 GMT-0400 (Eastern Daylight Time)
+[debug] [2018-04-08T01:14:52.693Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-08T01:14:52.696Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/hgw-greekfeed  
+  
+ Sat Apr 07 2018 21:14:52 GMT-0400 (Eastern Daylight Time)
+[debug] [2018-04-08T01:14:52.915Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'C:\Users\benge\Desktop\GreekFeeds'...
+[info] 
+[info] i  functions: Preparing to emulate functions.
+[debug] [2018-04-08T01:14:54.944Z] Fetching environment
+[debug] [2018-04-08T01:14:54.957Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/366684201737:getServerAppConfig  
+  
+ Sat Apr 07 2018 21:14:54 GMT-0400 (Eastern Daylight Time)
+[debug] [2018-04-08T01:14:54.959Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/366684201737/clients/_:getWebAppConfig  
+  
+ Sat Apr 07 2018 21:14:54 GMT-0400 (Eastern Daylight Time)
+[debug] [2018-04-08T01:14:55.180Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-08T01:14:55.228Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-08T01:14:55.228Z] Starting @google-cloud/functions-emulator
+[info] i  hosting: Serving hosting files from: public
+[info] +  hosting: Local server: http://localhost:5000
+
+[warn] !  functions: Error from emulator. Error: Emulator crashed! Check the log file...
+[debug] [2018-04-08T01:14:55.473Z] Error: Emulator crashed! Check the log file...
+    at ChildProcess.child.on (C:\Users\benge\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\@google-cloud\functions-emulator\src\cli\controller.js:650:24)
+    at emitTwo (events.js:106:13)
+    at ChildProcess.emit (events.js:191:7)
+    at Process.ChildProcess._handle.onexit (internal/child_process.js:215:12)
+[debug] [2018-04-08T01:23:57.587Z] ----------------------------------------------------------------------
+[debug] [2018-04-08T01:23:57.602Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\benge\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase serve
+[debug] [2018-04-08T01:23:57.602Z] CLI Version:   3.18.2
+[debug] [2018-04-08T01:23:57.602Z] Platform:      win32
+[debug] [2018-04-08T01:23:57.602Z] Node Version:  v6.9.2
+[debug] [2018-04-08T01:23:57.602Z] Time:          Sat Apr 07 2018 21:23:57 GMT-0400 (Eastern Daylight Time)
+[debug] [2018-04-08T01:23:57.602Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-04-08T01:23:57.634Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-04-08T01:23:57.634Z] > authorizing via signed-in user
+[debug] [2018-04-08T01:23:57.634Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/hgw-greekfeed  
+  
+ Sat Apr 07 2018 21:23:57 GMT-0400 (Eastern Daylight Time)
+[debug] [2018-04-08T01:23:57.954Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-08T01:23:57.954Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/hgw-greekfeed/tokens  
+  
+ Sat Apr 07 2018 21:23:57 GMT-0400 (Eastern Daylight Time)
+[debug] [2018-04-08T01:23:58.236Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-08T01:23:58.236Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/hgw-greekfeed  
+  
+ Sat Apr 07 2018 21:23:58 GMT-0400 (Eastern Daylight Time)
+[debug] [2018-04-08T01:23:58.434Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'C:\Users\benge\Desktop\GreekFeeds'...
+[info] 
+[info] i  functions: Preparing to emulate functions.
+[debug] [2018-04-08T01:24:00.457Z] Fetching environment
+[debug] [2018-04-08T01:24:00.466Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/366684201737:getServerAppConfig  
+  
+ Sat Apr 07 2018 21:24:00 GMT-0400 (Eastern Daylight Time)
+[debug] [2018-04-08T01:24:00.467Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/366684201737/clients/_:getWebAppConfig  
+  
+ Sat Apr 07 2018 21:24:00 GMT-0400 (Eastern Daylight Time)
+[debug] [2018-04-08T01:24:00.697Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-08T01:24:00.764Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-08T01:24:00.765Z] Starting @google-cloud/functions-emulator
+[info] i  hosting: Serving hosting files from: public
+[info] +  hosting: Local server: http://localhost:5000
+
+[warn] !  functions: Error from emulator. Error: Emulator crashed! Check the log file...
+[debug] [2018-04-08T01:24:01.085Z] Error: Emulator crashed! Check the log file...
+    at ChildProcess.child.on (C:\Users\benge\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\@google-cloud\functions-emulator\src\cli\controller.js:650:24)
+    at emitTwo (events.js:106:13)
+    at ChildProcess.emit (events.js:191:7)
+    at Process.ChildProcess._handle.onexit (internal/child_process.js:215:12)
+[debug] [2018-04-08T01:24:38.699Z] ----------------------------------------------------------------------
+[debug] [2018-04-08T01:24:38.702Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\benge\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase serve
+[debug] [2018-04-08T01:24:38.702Z] CLI Version:   3.18.2
+[debug] [2018-04-08T01:24:38.702Z] Platform:      win32
+[debug] [2018-04-08T01:24:38.703Z] Node Version:  v6.9.2
+[debug] [2018-04-08T01:24:38.703Z] Time:          Sat Apr 07 2018 21:24:38 GMT-0400 (Eastern Daylight Time)
+[debug] [2018-04-08T01:24:38.703Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-04-08T01:24:38.735Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-04-08T01:24:38.737Z] > authorizing via signed-in user
+[debug] [2018-04-08T01:24:38.740Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/hgw-greekfeed  
+  
+ Sat Apr 07 2018 21:24:38 GMT-0400 (Eastern Daylight Time)
+[debug] [2018-04-08T01:24:41.278Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-08T01:24:41.281Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/hgw-greekfeed/tokens  
+  
+ Sat Apr 07 2018 21:24:41 GMT-0400 (Eastern Daylight Time)
+[debug] [2018-04-08T01:24:41.637Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-08T01:24:41.637Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/hgw-greekfeed  
+  
+ Sat Apr 07 2018 21:24:41 GMT-0400 (Eastern Daylight Time)
+[debug] [2018-04-08T01:24:41.832Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'C:\Users\benge\Desktop\GreekFeeds'...
+[info] 
+[info] i  functions: Preparing to emulate functions.
+[debug] [2018-04-08T01:24:44.518Z] Fetching environment
+[debug] [2018-04-08T01:24:44.531Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/366684201737:getServerAppConfig  
+  
+ Sat Apr 07 2018 21:24:44 GMT-0400 (Eastern Daylight Time)
+[debug] [2018-04-08T01:24:44.533Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/366684201737/clients/_:getWebAppConfig  
+  
+ Sat Apr 07 2018 21:24:44 GMT-0400 (Eastern Daylight Time)
+[debug] [2018-04-08T01:24:44.841Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-08T01:24:44.890Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-08T01:24:44.891Z] Starting @google-cloud/functions-emulator
+[info] i  hosting: Serving hosting files from: public
+[info] +  hosting: Local server: http://localhost:5000
+
+[warn] !  functions: Error from emulator. Error: Emulator crashed! Check the log file...
+[debug] [2018-04-08T01:24:45.258Z] Error: Emulator crashed! Check the log file...
+    at ChildProcess.child.on (C:\Users\benge\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\@google-cloud\functions-emulator\src\cli\controller.js:650:24)
+    at emitTwo (events.js:106:13)
+    at ChildProcess.emit (events.js:191:7)
+    at Process.ChildProcess._handle.onexit (internal/child_process.js:215:12)

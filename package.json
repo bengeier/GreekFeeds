@@ -14,6 +14,7 @@
     },
     "scripts": {
         "sass": "node-sass sass/ -o public/style/ --watch",
+        "sassnw": "node-sass sass/ -o public/style/",
         "dev": "rerun-script"
     },
     "repository": {
