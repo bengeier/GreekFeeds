@@ -21,12 +21,13 @@ firebase.auth().onAuthStateChanged((_user) => {
 
 var usernameee = null;
 document.querySelector(".button").addEventListener("click", () => {
-  firebase.database().ref(active_user.uid).child("org").once("value").then(function(snapshot) {
-    usernameee = (snapshot.val() && snapshot.val().org) || 'NA';
-    // ...
-    });
-  console.log(usernameee);
-  //firebase.database().ref(active_user.uid).update({ben: "hi"});
+  let org = firebase.database().ref(active_user.uid).on("value", function(snapshot) {
+     return snapshot.val()['org'];
+  }, function (error) {
+     console.log("Error: " + error.code);
+  });
+
+  firebase.database().ref("fraternities").update([org]: "Needed");
 });
 
 document.querySelector(".list-button").addEventListener("click", () => {
