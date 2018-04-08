@@ -16,8 +16,8 @@
     "scripts": {
         "sass": "node-sass sass/ -o public/style/ --watch",
         "dev": "rerun-script",
-	"lint": "jslint public/js/*.js"
-
+        "sassnw": "node-sass sass/ -o public/style/",
+        "dev": "rerun-script"
     },
     "repository": {
         "type": "git",

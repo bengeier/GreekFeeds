@@ -1,11 +1,12 @@
-$btn-height: 150px;
+$btn-height: 200px;
 $btn-bgcolor: #56fbc6;
-$btn-font-color: blue;
+$btn-font-color: #39666b;
 
 body {
   background: linear-gradient(141deg, #0fb8ad 0%, #1fc8db 51%, #2cb5e8 75%);
   width: 100%;
   min-height: 100vh;
+  font-family: 'Roboto', sans-serif;
 }
 
 .button {
@@ -45,22 +46,22 @@ body {
   }
 }
 
-  #org-food-avail {
-    width: $btn-height;
-    height: $btn-height;
+#org-food-avail {
+  width: $btn-height;
+  height: $btn-height;
+  display: block;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+
+  border-radius: 50%;
+
+  > span {
+    margin: auto;
+    padding-top: 50%;
     display: block;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-
-    border-radius: 50%;
-
-    > span {
-      margin: auto;
-      padding-top: 50%;
-      display: block;
-      text-align: center;
-      font-size: xx-large;
-    }
+    text-align: center;
+    font-size: xx-large;
   }
+}
