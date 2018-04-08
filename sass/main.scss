@@ -1,23 +1,59 @@
 @import 'button_border_draw';
-$btn-height: 100px;
+$btn-height: 250px;
 $btn-bgcolor: #56fbc6;
 $btn-font-color: #39666b;
 
 body {
-  background: linear-gradient(141deg, #0fb8ad 0%, #1fc8db 51%, #2cb5e8 75%);
-  min-height: 100vh;
   font-family: 'Roboto', sans-serif;
+  background: linear-gradient(141deg, #0fb8ad 0%, #1fc8db 51%, #2cb5e8 75%);
 }
 
+.bg-fill {
+  position: absolute;
+  left:0; right: 0; top: 0; bottom: 0;
+  z-index: -999;
+  min-height: 100vh;
+  transition: opacity 2s;
+  opacity: 0;
+
+  &.cancel {
+    background: linear-gradient(141deg, #ffb8ad 0%, #ffedb9 51%, #ffd07e 75%);
+  }
+
+  &.complete {
+    background: linear-gradient(44deg, #67e600 0%, #81d771 51%, #00e65c 75%);
+  }
+
+  &.enabled {
+    opacity: 1;
+  }
+}
 .floater {
   position: absolute;
+
 }
+
+
 
 .content {
   display: flex; 
   align-items: center;
   justify-content: center;
-  height: 100%
+  flex-direction: column;
+  height: 100%;
+}
+
+.hint {
+  background-color: #6e6e6e;
+  font-size: large;
+  color: white;
+  min-height: 80px;
+  padding: 20px 0;
+  width: 100%;
+
+  > div {
+    margin: 0 40px;
+  }
 }
 
 .button {
@@ -53,11 +89,11 @@ body {
 
 
 #org-food-available {
-  width: $btn-height * 3;
+  width: $btn-height;
   min-height: $btn-height;
   display: block;
   line-height: auto;
 
-  font-size: x-large;
+  font-size: 100px;
   @include btn-border-drawing(darken($btn-bgcolor, 20%), #b346ff, 4px, bottom, right, 0.75s);
 }
