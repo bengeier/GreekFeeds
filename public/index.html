@@ -14,10 +14,45 @@
     <script defer src="/__/firebase/4.12.1/firebase-storage.js"></script>
     <!-- initialize the SDK after all desired features are loaded -->
     <script defer src="/__/firebase/init.js"></script>
+    <script 
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDE18BlorimFArtB4R1iCaDPlfBfcacvM8&callback=initMap"
+    async defer></script>
+    <script src="locations.js"></script>
 
     <link rel="stylesheet" href="style/main.css">
+
+    <style>
+        #map {
+            height: 100%;
+        }
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
   </head>
   <body>
-    <div>TODO here</div>
+    <!-- <div style="width: 480px; height: 360px;" -->
+    <div id="map"></div>
+<!--     <script>
+        var map;
+        function initMap() {
+            var myLatLng = {lat: -34.397, lng: 150.644};
+            map = new google.maps.Map(document.getElementById('map'), {
+                center: mid,
+                zoom: 17
+            });
+
+            for (var i = 0; i < houses.length; i++) {
+                var house = houses[i];
+                var marker = new google.maps.Marker({
+                    position: {lat: house[1], lng: house[2]},
+                    map: map,
+                    title: house[0]
+                });
+            }
+        }
+    </script> -->
   </body>
 </html>
