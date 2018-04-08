@@ -1,8 +1,10 @@
 var mid = {lat: 33.776042, lng: -84.392415};
 
+var mission = {lat: 33.764899, lng: -84.392212};
+
 var houses = [
     ['Alpha Phi', 33.77416, -84.392745], 
-    ['Alpha Xi Delta', 33.778222, -84.391986],
+    ['Alpha Xi Delta', 33.777853, -84.391846],
     ['Alpha Chi Omega', 33.775075, -84.392918],
     ['Alpha Gamma Delta', 33.77744, -84.393125],
     ['Kappa Alpha Theta', 33.777175, -84.391423],
