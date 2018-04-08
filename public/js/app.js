@@ -1,51 +1,5 @@
 (() => {
     "use strict";
-
-    let ui = new firebaseui.auth.AuthUI(firebase.auth());
-    document.querySelector(".login-button").addEventListener("click", () => {
-        ui.start('#firebaseui-auth-container', {
-            signInOptions: [
-                firebase.auth.EmailAuthProvider.PROVIDER_ID
-            ],
-            signInSuccessUrl: 'index.html'
-        });
-    });
-
-    let org;
-    firebase.auth().onAuthStateChanged((user) => {
-        console.log('changed', user);
-        if (user) {
-            firebase.database().ref(user.uid).on("value", function(snapshot) {
-                let db_user = snapshot.val()
-                org = (db_user && db_user['org']) || 'unknown';
-                console.log(user.uid + " " + org);
-                document.querySelector('.login-button').remove()
-                change_button_state('ready');
-
-
-            }, function (error) {
-                console.log("Error: " + error.code);
-            });
-        }
-    });
-
-    document.querySelector(".list-button").addEventListener("click", () => {
-        firebase.database().ref("fraternities").on("value", function(snapshot) {
-            snapshot.forEach(function(child) {
-                if (child.val() === "Needed") {
-                    console.log(child.key);
-                } else {
-                    console.log("not needed: " + child.key)
-                }
-            });
-        }, function (error) {
-            console.log("Error: " + error.code);
-        });
-    });
-
-
-
-
     let bg_fill = document.querySelector(".bg-fill");
 
     const button_strings = {
@@ -81,6 +35,50 @@
         }
     };
 
+    let ui = new firebaseui.auth.AuthUI(firebase.auth());
+    document.querySelector(".login-button").addEventListener("click", () => {
+        ui.start('#firebaseui-auth-container', {
+            signInOptions: [
+                firebase.auth.EmailAuthProvider.PROVIDER_ID
+            ],
+            signInSuccessUrl: 'index.html'
+        });
+    });
+
+    let org;
+    firebase.auth().onAuthStateChanged((user) => {
+        console.log('changed', user);
+        if (user) {
+            firebase.database().ref(user.uid).on("value", function(snapshot) {
+                let db_user = snapshot.val()
+                org = (db_user && db_user['org']) || 'unknown';
+                console.log(user.uid + " " + org);
+                document.querySelector('.login-button').remove()
+                document.querySelector('.username').innerText = user.email;
+                document.querySelector('.orgname').innerText = org;
+                change_button_state('ready');
+
+
+            }, function (error) {
+                console.log("Error: " + error.code);
+            });
+        }
+    });
+
+    // document.querySelector(".list-button").addEventListener("click", () => {
+    //     firebase.database().ref("fraternities").on("value", function(snapshot) {
+    //         snapshot.forEach(function(child) {
+    //             if (child.val() === "Needed") {
+    //                 console.log(child.key);
+    //             } else {
+    //                 console.log("not needed: " + child.key)
+    //             }
+    //         });
+    //     }, function (error) {
+    //         console.log("Error: " + error.code);
+    //     });
+    // });
+
 
 
 
@@ -100,7 +98,6 @@
     }
 
     food_btn.addEventListener("click", e => {
-        e.stopPropagation();
         let btn = e.target;
         let old_state = food_button_state;
         if (food_button_state === 'ready') {
@@ -118,9 +115,8 @@
         }
     });
     document.querySelector('.content').addEventListener('click', e => {
-        if (food_button_state == 'needs-confirmation') {
+        if (food_button_state == 'needs-confirmation' && e.target !== food_btn) {
             change_button_state('ready')
-        } else {
-        }
+        } 
     })
 })();

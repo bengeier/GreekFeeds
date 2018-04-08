@@ -21,7 +21,7 @@ body {
   }
 
   &.complete {
-    background: linear-gradient(44deg, #67e600 0%, #81d771 51%, #00e65c 75%);
+    background: linear-gradient(44deg, #00e6d6 0%, #94ff99 51%, #00e65c 75%);
   }
 
   &.enabled {
@@ -30,7 +30,13 @@ body {
 }
 .floater {
   position: absolute;
+  left: 0;
+  right: 0;
+  padding: 10px 10px;
+}
 
+.orgname {
+  float: right;
 }
 
 
@@ -52,7 +58,7 @@ body {
   width: 100%;
 
   > div {
-    margin: 0 40px;
+    margin: 0 20px;
   }
 }
 
@@ -75,6 +81,7 @@ body {
     color: $btn-font-color;
   }
 
+  &:focus,
   &:active {
     text-shadow: 0 1px 0 rgba(255, 255, 255, .3);
     text-decoration: none;
