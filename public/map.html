@@ -14,7 +14,7 @@
     <script defer src="/__/firebase/4.12.1/firebase-storage.js"></script>
     <!-- initialize the SDK after all desired features are loaded -->
     <script defer src="/__/firebase/init.js"></script>
-    <script 
+    <script
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDE18BlorimFArtB4R1iCaDPlfBfcacvM8&callback=initMap"
     async defer></script>
     <script src="js/locations.js"></script>
@@ -64,7 +64,7 @@
                 });
             } else {
                 console.log('Browser doesnt support geolocation:(');
-            } 
+            }
             generateLocs();
         }
 
@@ -80,7 +80,7 @@
             toDir = toDir + to_visit[i][1] + ', ' + to_visit[i][2] + "&travelmode=driving";
             toDir = toDir + "&destination=" + mission['lat'] + ', ' + mission['lng'];
             toDir = encodeURI(toDir);
-            
+
             window.open(toDir, '_blank');
         }
 
@@ -94,8 +94,18 @@
                     map: map,
                     title: house[0]
                 });
-            }           
+            }
         }
+    </script>
+    <a class="button">Clear All</a>
+    <script>
+        document.querySelector(".button").addEventListener("click", () => {
+            console.log("clicked");
+            houses.forEach(function(house) {
+                let key = house[0].replace(" ", "_").replace(" ", "_").toLowerCase();
+                firebase.database().ref("fraternities").update({[key]: "Unneeded"});
+            });
+        });
     </script>
   </body>
 </html>
