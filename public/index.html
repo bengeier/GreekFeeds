@@ -14,7 +14,9 @@
     <script defer src="/__/firebase/4.12.1/firebase-storage.js"></script>
     <!-- initialize the SDK after all desired features are loaded -->
     <script defer src="/__/firebase/init.js"></script>
-    <script 
+    <script src="https://cdn.firebase.com/libs/firebaseui/2.7.0/firebaseui.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/2.7.0/firebaseui.css" />
+    <script
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDE18BlorimFArtB4R1iCaDPlfBfcacvM8&callback=initMap"
     async defer></script>
     <script src="js/locations.js"></script>
@@ -37,6 +39,7 @@
     </style>
   </head>
   <body>
+    <div id="firebaseui-auth-container"></div>
     <div class="content">
       <a href="#" class="login-button">test</a>
       <a href="#" class="button" id="org-food-avail">Request Pickup</a>
