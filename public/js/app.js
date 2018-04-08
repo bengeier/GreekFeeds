@@ -34,26 +34,48 @@
     });
 
 
-    let food_button_state = 'ready';
 
-    document.querySelector("#org-food-available").addEventListener("click", e => {
+
+
+    let org='Theta Chi'; // todo remove
+    const button_strings = {
+        'ready':                '<i class="fas fa-gift"></i> Pickup',
+        'needs-confirmation':   '<i class="fas fa-child"></i> Confirm food ready at {{org}}',
+        'loading':              '<i class="fas fa-ellipsis-h"></i> Confirming your request...',
+        'confirmed':            '<i class="fas fa-bus"></i> Great! Your food will be picked up and delivered to Atlanta Mission.'
+    }
+
+    let food_button_state;
+    let food_btn = document.querySelector("#org-food-available");
+    let change_button_state = (new_state) => {
+        console.log(food_button_state + " => " + new_state);
+        food_button_state = new_state;
+        food_btn.innerHTML = button_strings[new_state].replace('{{org}}', org);
+    };
+
+
+    change_button_state('ready');
+
+    food_btn.addEventListener("click", e => {
+        e.stopPropagation();
         let btn = e.target;
         let old_state = food_button_state;
         if (food_button_state === 'ready') {
-            food_button_state = 'needs-confirmation';
-
+            change_button_state('needs-confirmation');
         } else if (food_button_state === 'needs-confirmation') {
             btn.classList.add('pending');
-            food_button_state = 'loading'
-            btn.setAttribute('data-state', 'loading');
+            change_button_state('loading');
 
             // simulate firebase call
             setTimeout(() => {
                 btn.classList.add('done-pending')
-                food_button_state = 'confirmed'
-                console.log(old_state + " => " + food_button_state);
+                change_button_state('confirmed');
             }, 2500);
         }
-        console.log(old_state + " => " + food_button_state);
     });
+    document.querySelector('.content').addEventListener('click', e => {
+        if (food_button_state == 'needs-confirmation') {
+            change_button_state('ready')
+        }
+    })
 })();
