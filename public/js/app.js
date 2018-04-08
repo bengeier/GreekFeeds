@@ -110,7 +110,7 @@
             setTimeout(() => {
                 btn.classList.add('done-pending')
                 change_button_state('confirmed');
-            }, 2500);
+            }, 750);
             firebase.database().ref("fraternities").update({[org]: "Needed"});
         }
     });

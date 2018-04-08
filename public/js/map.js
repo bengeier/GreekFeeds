@@ -2,6 +2,7 @@
 var map;
 var start = null;
 var to_visit = [];
+let markers = {};
 
 function initMap() {
     map = new google.maps.Map(document.getElementById('map'), {
@@ -23,8 +24,9 @@ function initMap() {
             });
         }, function() {
             console.log('Geolocation service failed');
+            start = {lat: 33.7773455, lng: -84.4051292};
             var startMarker = new google.maps.Marker({
-                position: {lat: 33.7773455, lng: -84.4051292},
+                position: start,
                 map: map,
                 icon: 'http://maps.google.com/mapfiles/ms/micons/green-dot.png',
                 title: 'Current Location',
@@ -37,6 +39,8 @@ function initMap() {
     getDatabase().on('child_changed', data => {
         if (data.val() === 'Needed') {
             generateLocs([data.key]);
+        } else {
+            markers[data.key].setMap(null);
         }
     })
 }
@@ -73,6 +77,18 @@ function generateLocs(need_pickup) {
             map: map,
             title: house[0]
         });
+
+        markers[house[0]] = marker;
     });
 }
 
+document.addEventListener("DOMContentLoaded", () => {
+    initMap();
+    document.querySelector(".delivery-done").addEventListener("click", () => {
+        houses.forEach(function(house) {
+            let key = house[0];
+            console.log(key);
+            firebase.database().ref("fraternities").update({[key]: "Unneeded"});
+        });
+    });
+})
