@@ -1,0 +1,66 @@
+$btn-height: 150px;
+$btn-bgcolor: #56fbc6;
+$btn-font-color: blue;
+
+body {
+  background: linear-gradient(141deg, #0fb8ad 0%, #1fc8db 51%, #2cb5e8 75%);
+  width: 100%;
+  min-height: 100vh;
+}
+
+.button {
+  appearance: none;
+  cursor: pointer;
+  border: none;
+  display: block;
+  margin: auto;
+  outline: none;
+  line-height: $btn-height;
+  text-align: center;
+  background-color: $btn-bgcolor;
+  text-decoration: none;
+  color: $btn-font-color;
+  display: inline-block;
+  transition: box-shadow .2s, background-color .5s;
+
+  &:visited {
+    color: $btn-font-color;
+  }
+
+  &:hover,
+  &:focus {
+    background-color: lighten($btn-bgcolor, 3%);
+    text-decoration: none;
+    outline: none;
+  }
+
+  &:active {
+    text-shadow: 0 1px 0 rgba(255, 255, 255, .3);
+    text-decoration: none;
+    background-color: desaturate($btn-bgcolor, 30%);
+    border-color: darken($btn-bgcolor, 12%);
+    color: darken($btn-font-color, 10%);
+
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, .2);
+  }
+}
+
+  #org-food-avail {
+    width: $btn-height;
+    height: $btn-height;
+    display: block;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    > span {
+      margin: auto;
+      padding-top: 50%;
+      display: block;
+      text-align: center;
+      font-size: xx-large;
+    }
+  }
