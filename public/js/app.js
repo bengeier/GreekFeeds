@@ -12,25 +12,34 @@ document.querySelector(".login-button").addEventListener("click", () => {
     var errorMessage = error.message;
   });
 });
-let active_user;
-firebase.auth().onAuthStateChanged((_user) => {
-  if (_user) {
-      active_user = _user;
-    }
-  });
+let org;
+firebase.auth().onAuthStateChanged((user) => {
+  if (user) {
+    firebase.database().ref(user.uid).on("value", function(snapshot) {
+      org = snapshot.val()['org'];
+      console.log(user.uid + " " + org);
 
-var usernameee = null;
+    }, function (error) {
+      console.log("Error: " + error.code);
+    });
+  }
+});
+
 document.querySelector(".button").addEventListener("click", () => {
-  let org = firebase.database().ref(active_user.uid).on("value", function(snapshot) {
-     return snapshot.val()['org'];
-  }, function (error) {
-     console.log("Error: " + error.code);
-  });
-
-  firebase.database().ref("fraternities").update([org]: "Needed");
+    firebase.database().ref("fraternities").update({[org]: "Needed"});
 });
 
 document.querySelector(".list-button").addEventListener("click", () => {
+    firebase.database().ref("fraternities").on("value", function(snapshot) {
+      snapshot.forEach(function(child) {
+        if (child.val() === "Needed") {
+          console.log(child.key);
+        }
+      });
+    }, function (error) {
+      console.log("Error: " + error.code);
+    });
+  });
 //firebase.database().ref("fraternities").update({'alpha_phi': "NEEDED"});
 //firebase.database().ref("fraternities").update({'alpha_xi_delta': "NEEDED"});
 //firebase.database().ref("fraternities").update({'alpha_chi_omega': "NEEDED"});
@@ -68,6 +77,5 @@ document.querySelector(".list-button").addEventListener("click", () => {
 //firebase.database().ref("fraternities").update({'sigma_alpha_epsilon': "NEEDED"});
 //firebase.database().ref("fraternities").update({'kappa_alpha': "NEEDED"});
 //firebase.database().ref("fraternities").update({'pi_kappa_alpha': "NEEDED"});
-});
 
 //provider.addScope('https://www.googleapis.com/auth/contacts.readonly');
